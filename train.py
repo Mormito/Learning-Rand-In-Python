@@ -17,6 +17,9 @@ for contador in range(1, threads + 1):
 
 average = sum/threads
 print("― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ―")
-print("Total Time: " + str(sum))
+print("Total Time: " + str(sum) + " Seconds")
+if sum > 60:
+    print("Total Time: " + str(sum/60) + " Minutes")
+    
 print("Requests Average: " + str(average))
 print("― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ―")
