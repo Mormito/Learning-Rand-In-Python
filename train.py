@@ -1,14 +1,22 @@
 import random
 import time
 
-contador = 0
+sum = 0.0
+average = 0.0
 visor = 0
-threads = 5
+threads = int(input("Insira o numero de threads: "))
+print()
 
-#int(input("Insira o numero de threads: "))
-
-while contador < threads:
-    visor = random.uniform(0, 2.5)
+for contador in range(1, threads + 1):
+    visor = random.uniform(0.25, 2.5)
     time.sleep(visor)
-    contador = contador + 1
-    print("Print | Numero " + str(contador) + " | delay = " + str(visor))
+    sum += visor
+    print("Print | Request Number #" + str(contador) + " | Delay = " + str(visor))
+    
+
+
+average = sum/threads
+print("― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ―")
+print("Total Time: " + str(sum))
+print("Requests Average: " + str(average))
+print("― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ―")
